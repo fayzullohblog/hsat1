@@ -46,10 +46,21 @@ MY_APP=[
 
 
 OUT_APPS=[
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 INSTALLED_APPS=INSTALLED_APPS+OUT_APPS+MY_APP
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+            'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+
+    'DEFAULT_PERMISSION_CLASSESS':[
+        'rest_framework.permissions.djangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 
 MIDDLEWARE = [
