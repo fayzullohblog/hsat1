@@ -1,11 +1,19 @@
-from rest_framework import serializers
-from rest_framework import viewsets
-from .models import MyUser
+from rest_framework_simplejwt import serializers
+from rest_framework_simplejwt.tokens import Token
 
-class MyUserSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model=MyUser()
-        fields='__all__'
+
+
+class MyTokenObtainPairSerializer(serializers.TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user) -> Token:
+        print('---------------------------1')
+        token=super().get_token(user)
+        token['username']=user.username
+        print('-----2',token)
+        
+        return token
+        
+
+
 
         
