@@ -3,15 +3,10 @@ import Home from "../pages/Home";
 import RootLayout from "../layout/RootLayout";
 import Admission from "../pages/Amission";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <RootLayout>
-        <Home />
-      </RootLayout>
-    ),
+    element: <Home />,
   },
   {
     path: "/admission",
