@@ -10,24 +10,24 @@ const onFinishFailed = (errorInfo) => {
 
 const Home = () => {
   return (
-    <div className="flex justify-center items-center flex-col h-[90vh] ">
+    <div className="flex justify-center items-center flex-col h-screen bg-blue-100">
       <img src="icons/HSAT_logo.png" alt="HSAT logo" className="w-24 h-24" />
-      <h3 className="font-bold text-lg text-center leading-4 mb-6">
-        Toshkent shahar statistika <br /> boshqarmasi HSAT
+      <h3 className="font-bold text-lg text-center leading-4 mb-6 font-mono">
+        Toshkent shahar statistika <br /> boshqarmasi
       </h3>
       <Form
         className="bg-white rounded-[14px] border p-24 shadow-md flex flex-col"
         name="basic"
-        style={{
-          maxWidth: 800,
-        }}
         initialValues={{
-          remember: true,
+          remember: false,
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="on"
       >
+        <h3 className="text-center pb-6 text-lg text-gray-600 font-bold animate animation-moveLeftToRight">
+          HSAT
+        </h3>
         <Form.Item
           name="username"
           rules={[
@@ -37,7 +37,7 @@ const Home = () => {
             },
           ]}
         >
-          <Input placeholder="Login" />
+          <Input placeholder="Login" className="p-2 w-[250px]" />
         </Form.Item>
 
         <Form.Item
@@ -49,7 +49,7 @@ const Home = () => {
             },
           ]}
         >
-          <Input.Password placeholder="Parol" />
+          <Input.Password placeholder="Parol" className="p-2" />
         </Form.Item>
 
         <Form.Item name="remember" valuePropName="checked">
@@ -57,8 +57,8 @@ const Home = () => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" className="bg-blue-400">
-            Submit
+          <Button type="primary" htmlType="submit" className="bg-blue-600">
+            Kirish
           </Button>
         </Form.Item>
       </Form>
