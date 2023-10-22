@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class LiterappConfig(AppConfig):
+class LetterappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'literapp'
+    name = 'letterapp'
