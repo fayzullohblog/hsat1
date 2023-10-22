@@ -67,5 +67,9 @@ class LetterCourt(BaseModel):       # Sud hati
 
    def __repr__(self) -> str:
           return f'{self.letter_name} : {self.user}'
-   
 
+
+class LetterReference(BaseModel):
+    letter_name=models.CharField(max_length=50)
+    company_name=models.CharField(max_length=150)
+    

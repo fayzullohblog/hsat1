@@ -1,9 +1,5 @@
-./venv
-venv
-media
-.env
-db.sqlite3
-TODO.txtcode
+
+
 # Django #
 *.log
 *.pot
@@ -103,13 +99,6 @@ celerybeat-schedule.*
 *.sage.py 
 
 # Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
 
 # mkdocs documentation 
 /site 
