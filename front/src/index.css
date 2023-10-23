@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.ant-layout-sider {
+  background-color: white!important;
+}
 @keyframes moveLeftToRight {
     0%, 100% {
       transform: translateX(-50%);

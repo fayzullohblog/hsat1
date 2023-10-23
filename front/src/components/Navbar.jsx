@@ -2,8 +2,12 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1 className="text-center">NAVBAR</h1>
+    <div className="p-2 ">
+      <img
+        src="imgs/panel_hsat_logo.png"
+        alt="hsat logo"
+        className="w-20"
+      />
     </div>
   );
 };
