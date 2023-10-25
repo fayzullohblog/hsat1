@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import RootLayout from "../layout/RootLayout";
-import Admission from "../pages/Main";
+import Main from "../pages/Main";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     path: "/adminPanel",
     element: (
       <RootLayout>
-        <Admission />
+        <Main />
       </RootLayout>
     ),
   },
