@@ -12,19 +12,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+import os
+
+config_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+config.read(config_file)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5posm3i2lksmyqm(0*be2+clt1^i9@4nrt=qd6cj@0-)7q^k^^'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG',default=False)
 
 ALLOWED_HOSTS = []
 
@@ -111,13 +116,35 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('DB_ENGINE', default='django.db.backends.sqlite3'),
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST', default='localhost'),
+#         'PORT': config('DB_PORT', default='5432'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.oracle",
+        "NAME": "xe",
+        "USER": "a_user",
+        "PASSWORD": "a_password",
+        "HOST": "",
+        "PORT": "",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -167,6 +194,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django project settings.py
 
 from datetime import timedelta
+import os
 ...
 
 SIMPLE_JWT = {
