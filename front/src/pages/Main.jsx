@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Helmet } from "react-helmet";
-
+import { MdOutlineNotificationsNone } from "react-icons/md";
 const { Header, Sider, Content } = Layout;
 
 const Main = () => {
@@ -23,7 +23,12 @@ const Main = () => {
         <title>Admin Panel</title>
         <link rel="canonical" href="http://hsat.uz/adminPanel" />
       </Helmet>
-      <Sider trigger={null} collapsible collapsed={collapsed} className="flex items-center justify-center">
+      <Sider
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        className="flex items-center justify-center"
+      >
         <Menu
           mode="inline"
           defaultSelectedKeys={["1"]}
@@ -72,6 +77,8 @@ const Main = () => {
             background: colorBgContainer,
           }}
         >
+          <UserOutlined />
+          <MdOutlineNotificationsNone />
           Content
         </Content>
       </Layout>
