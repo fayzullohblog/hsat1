@@ -8,7 +8,9 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Helmet } from "react-helmet";
-
+import Content1 from "../components/Contents/Content1";
+import Content2 from "../components/Contents/Content2";
+import Content3 from "../components/Contents/Content3";
 const { Header, Sider, Content } = Layout;
 
 const Main = () => {
@@ -16,6 +18,12 @@ const Main = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const [selectedItem, setSelectedItem] = useState("1");
+
+  const handleMenuItemClick = (key) => {
+    setSelectedItem(key);
+  };
   return (
     <Layout>
       <Helmet>
@@ -28,6 +36,8 @@ const Main = () => {
           mode="inline"
           className=""
           defaultSelectedKeys={["1"]}
+          selectedKeys={[selectedItem]}
+          onClick={({ key }) => handleMenuItemClick(key)}
           items={[
             {
               key: "1",
@@ -73,7 +83,9 @@ const Main = () => {
             background: colorBgContainer,
           }}
         >
-          Content
+          {selectedItem === "1" && <Content1 />}
+          {selectedItem === "2" && <Content2 />}
+          {selectedItem === "3" && <Content3 />}
         </Content>
       </Layout>
     </Layout>

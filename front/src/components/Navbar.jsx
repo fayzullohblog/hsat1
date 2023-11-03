@@ -12,7 +12,7 @@ const Navbar = () => {
             size={25}
             className="text-gray-600 hover:text-black transition-all "
           />
-          <span className="rounded-full text-sm w-4 h-4 bg-red-500 text-center absolute top-0 right-0">
+          <span className="rounded-full text-white text-sm w-4 h-4 bg-red-500 text-center absolute top-0 right-0">
             4
           </span>
         </Link>
