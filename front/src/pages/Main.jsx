@@ -3,12 +3,12 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
-  UserOutlined,
   VideoCameraOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Helmet } from "react-helmet";
-import { MdOutlineNotificationsNone } from "react-icons/md";
+
 const { Header, Sider, Content } = Layout;
 
 const Main = () => {
@@ -23,30 +23,26 @@ const Main = () => {
         <title>Admin Panel</title>
         <link rel="canonical" href="http://hsat.uz/adminPanel" />
       </Helmet>
-      <Sider
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
-        className="flex items-center justify-center"
-      >
+      <Sider trigger={null} collapsible collapsed={!collapsed} className="pt-3">
         <Menu
           mode="inline"
+          className=""
           defaultSelectedKeys={["1"]}
           items={[
             {
               key: "1",
               icon: <UserOutlined />,
-              label: "nav 1",
+              label: "Hujjatlar",
             },
             {
               key: "2",
               icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              label: "documents",
             },
             {
               key: "3",
               icon: <UploadOutlined />,
-              label: "nav 3",
+              label: "something",
             },
           ]}
         />
@@ -77,8 +73,6 @@ const Main = () => {
             background: colorBgContainer,
           }}
         >
-          <UserOutlined />
-          <MdOutlineNotificationsNone />
           Content
         </Content>
       </Layout>
